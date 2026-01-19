@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* !DAY-1 */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+#logo,
+h1,
+h2 {
+  font-family: "Cormorant Garamond", serif;
+}
+nav {
+  height: 100px;
+  display: flex;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background-color: #fff;
+}
+
+#nav_one {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#nav_two {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+#nav_two > a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+#nav_two > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 2px solid red;
+  transition: width 0.5s;
+}
+#nav_two > a:hover::after {
+  width: 100%;
+}
+#nav_three {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 40px;
+}
+#nav_three > i {
+  font-size: 25px;
+}
+#cart_quantity {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 14px;
+  position: absolute;
+  top: 20px;
+  left: 120px;
+}
+#cart_price {
+  font-size: 20px;
+  font-weight: 600;
+}
+#slider_container {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 100px;
+  position: relative;
+}
+#slider_container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.non-active {
+  display: none;
+}
+#left_arrow,
+#right_arrow {
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  font-size: 25px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: absolute;
+}
+
+#left_arrow {
+  left: 150px;
+}
+#right_arrow {
+  right: 150px;
+}
+
+/* !DAY-2 */
+#second_page {
+  height: 80vh;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card > img {
+  height: 400px;
+}
+.layer {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 150px;
+  position: absolute;
+  bottom: -400px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.212);
+  transition: all 0.5s 0s ease;
+}
+.card:hover > .layer {
+  bottom: 5px;
+}
+.layer > button {
+  background-color: #9e78ff;
+  color: white;
+  padding: 10px 17px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+}
+.layer > button:hover {
+  content: "";
+}
+.layer > button::after {
+  content: "";
+  background-color: rgba(128, 0, 128, 0.107);
+  color: white;
+  height: 100%;
+  width: 0%;
+  font-size: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  transition: all 0.5s 0s ease;
+  opacity: 0;
+}
+.layer > button:hover::after {
+  width: 100%;
+  font-size: 20px;
+  opacity: 1;
+}
+
+.layer > p {
+  background-color: rgba(29, 37, 71, 0.5);
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  font-family: "Cormorant Garamond", serif;
+}
+/* !DAY 3 */
+
+#third_page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#third_page > img {
+  height: 100%;
+  width: 72%;
+  object-fit: cover;
+}
+#third_page_layer {
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  opacity: 0;
+  /* border: 10px solid red; */
+  background-color: rgba(0, 0, 0, 0.28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  transition: all 0.7s 0s ease;
+}
+#third_page_layer > h1 {
+  font-size: 0px;
+  text-shadow: 2px 2px 5px black;
+  transition: all 0.7s 0s ease;
+}
+#third_page_layer > p {
+  font-size: 0px;
+  transition: all 0.7s 0s ease;
+}
+
+#third_page > img:hover + #third_page_layer,
+#third_page_layer:hover {
+  height: 100%;
+  width: 72%;
+  opacity: 1;
+}
+#third_page_layer:hover > h1 {
+  font-size: 100px;
+}
+#third_page_layer:hover > p {
+  font-size: 20px;
+}
+
+/* !DAY 4 */
+#fourth_page {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  background-color: #efefef;
+}
+#info_container {
+  flex-basis: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#info1,
+#info2,
+#info3,
+#info4 {
+  height: 100%;
+  flex-basis: 25%;
+}
+#info1,
+#info2,
+#info3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 10px;
+}
+#info1 > h1,
+#info2 > h1,
+#info3 > h1,
+#info4 > h1,
+#info4_subscribe > h1 {
+  font-size: 50px;
+  text-align: center;
+}
+#info1 > h3 {
+  font-weight: 400;
+}
+
+#info1 > p {
+  text-align: center;
+  font-size: 15px;
+}
+#info2,
+#info3 {
+  gap: 30px;
+}
+ul {
+  width: 100%;
+  padding-left: 80px;
+}
+ul > li {
+  font-size: 20px;
+}
+#info4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#input_container {
+  width: 100%;
+}
+#input_container > input {
+  height: 40px;
+  width: 200px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.647);
+}
+#input_container > button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: royalblue;
+  color: white;
+}
+#icon_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px;
+  gap: 10px;
+}
+.icon {
+  font-size: 25px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+footer {
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.201);
+  font-size: 22px;
+}
